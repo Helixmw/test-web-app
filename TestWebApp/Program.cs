@@ -35,4 +35,6 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
+Console.WriteLine($"Running in environment: {builder.Environment.EnvironmentName}");
+
 app.Run();
