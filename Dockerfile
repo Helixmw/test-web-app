@@ -8,8 +8,6 @@ COPY . ./
 RUN dotnet publish NewTestApp.sln -c Release -o /app/publish
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
 WORKDIR /app
-#Set the environment variable to Production
-ENV ASPNETCORE_ENVIRONMENT=Development
 COPY --from=build /app/publish .
-EXPOSE 80
+EXPOSE 8080
 ENTRYPOINT ["dotnet", "TestWebApp.dll"]

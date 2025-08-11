@@ -1,0 +1,10 @@
+version: '3'
+services:
+  socialapp:
+    image: helix1498/socialapp:1.0
+    ports:
+      - "5500:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__ApplicationDBContextConnection=Host=dpg-d2apve95pdvs73c2m8ig-a.frankfurt-postgres.render.com;Database=webappdb_pa6q;Username=webappdb_pa6q_user;Password=5RKOJ8NKgeh9tBnBuUx2dYDEOcV79Zz4;SslMode=Require
+
